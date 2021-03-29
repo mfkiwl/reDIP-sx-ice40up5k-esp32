@@ -1,18 +1,22 @@
-# reDIP sx
+# reDIP SX
 
-## ESP32 / iCE40UP5K / SGTL5000 development board with MOS 6581/8580 pinout
-![Board](documentation/reDIP-sx-board.png)
+## ESP32 / iCE40UP5K / SGTL5000 development board with MOS 6581/8580 SID pinout
+![Board](documentation/reDIP-SX-board.png)
 
 ## Overview
-The reDIP sx is a open source hardware development board which combines the following in a DIP-32 size package:
+The reDIP SX is an open source hardware development board which combines the following in a DIP-32 size package:
 
-* ESP32-PICO-V3-02 MCU with Wi-Fi and Bluetooth
-* iCE40UP5K FPGA
-* SGTL5000 Audio Codec
+* Espressif ESP32-PICO-V3-02 MCU with Wi-Fi and Bluetooth
+* Lattice iCE40UP5K FPGA
+* NXP SGTL5000 Audio Codec
 * 64Mbit PSRAM
 * Two RGB LEDs
-* USB-C receptacle for power, serial, and analog audio
+* USB-C receptacle for power, serial communication, and analog audio
 * 5V tolerant I/O
+
+In short, a lot of fun stuff is crammed onto a small board!
+
+For a more purist FPGA platform for MOS 6581/8580 SID emulation, you need look no further than the [reDIP SID](https://github.com/daglem/reDIP-SID)!
 
 ## General use
 
@@ -23,17 +27,18 @@ The reDIP sx is a open source hardware development board which combines the foll
 * 5V input
 * 3.3V output
 * 22 FPGA GPIO
-* 3 FPGA current drive / open-drain I/O, one with pullup
+* 3 FPGA current drive / open-drain I/O
 * 4 audio pins (stereo line input, stereo headphone output)
 * GND
 
-All FPGA I/O is 5V tolerant, and can drive 5V TTL. JP1 can be shorted to make the 5V input pin bidirectional, e.g. for powering 5V TTL devices.
+All FPGA I/O is 5V tolerant, and can drive 5V TTL. JP1 can be shorted to make the 5V input pin bidirectional, e.g. to power 5V TTL devices.
 
-The number of FPGA I/O is sufficient for e.g. 5 PMOD interfaces (or 6, with two pins open-drain or input-only).
+The number of FPGA I/O is sufficient for e.g. three twelve-pin PMOD interfaces (with two pins open-drain or input-only).
 
 #### Solder pads:
 
 * Stereo line output (left, right, GND)
+* RGB LED strip data
 * ESP32 IO25
 * ESP32 I35
 
@@ -74,14 +79,14 @@ For anyone wanting to experiment with a SID setup, while avoiding blown fuses, d
 
 * A 2A C64 power supply is recommended
 * Make sure that JP1 is open
-* Carefully follow the instructions in the [schematic diagram](documentation/reDIP-sx-sch.pdf) for making a socket adapter
+* Carefully follow the instructions in the [schematic diagram](documentation/reDIP-SX-sch.pdf) for making a socket adapter
 
 ## Disclaimer
 
-Please note that this is my very first board - rookie mistakes are probably made, and feedback is welcome. The board has not been manufactured yet, and is thus completely untested.
+Please note that this is my very first board - rookie mistakes are probably made, and [feedback](https://github.com/daglem/reDIP-SX/discussions/1) is welcome. The board has not been manufactured yet, and is thus completely untested.
 
 ## Board Front
-![Board Front](documentation/reDIP-sx-board-front.png)
+![Board Front](documentation/reDIP-SX-board-front.png)
 
 ## Board Back
-![Board Back](documentation/reDIP-sx-board-back.png)
+![Board Back](documentation/reDIP-SX-board-back.png)
